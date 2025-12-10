@@ -10,7 +10,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
       title: 'Cre8Hub – AI-Powered Content Creation Platform',
       description:
         'Backend infrastructure built with Node.js, Express.js, and MongoDB enabling secure authentication and RBAC. Includes a FastAPI-based AI microservice for persona extraction from YouTube transcripts with Redis caching and YouTube Data API integration.',
-      image: '/api/placeholder/600/400',
+      image: '/cre8hub.png',
       technologies: [
         'Node.js',
         'Express.js',
@@ -32,7 +32,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
       title: 'Stocksage – AI-Powered Financial Analytics',
       description:
         'End-to-end financial analytics system integrating FastAPI, Streamlit, LangChain, Whisper, and YFinance. Supports real-time stock tracking, automated PnL analysis, dataset-upload workflows, and a modular AI pipeline with tool-calling agents.',
-      image: '/api/placeholder/600/400',
+      image: '/stocksage.png',
       technologies: [
         'Python',
         'FastAPI',
@@ -52,7 +52,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
       title: 'FitForge – Full-Stack Fitness Tracking App',
       description:
         'A fitness tracking web app with routine creation, workout logs, analytics dashboards, and a responsive React interface. Backend built with Node.js/Express and MongoDB featuring JWT auth, role-based access, and a searchable exercise database.',
-      image: '/api/placeholder/600/400',
+      image: '/fitforge.png',
       technologies: [
         'React',
         'TypeScript',

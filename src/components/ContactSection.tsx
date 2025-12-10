@@ -24,19 +24,13 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'john.doe@email.com',
-      href: 'mailto:john.doe@email.com',
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: 'nikhil14807@gmail.com',
+      href: 'mailto:nikhil14807@gmail.com',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Noida, India',
       href: null,
     },
   ];

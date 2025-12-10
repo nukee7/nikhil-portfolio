@@ -110,17 +110,13 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             </h2>
 
             <div className="mb-6 scale-in" style={{ animationDelay: '0.3s' }}>
-              <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-3">
-                I'm a passionate full stack developer with 5+ years of experience creating
-                beautiful, functional, and user-centered digital experiences. I specialize
-                in React, Node.js, and modern web technologies.
-              </p>
-              <p className="text-sm md:text-base text-muted-foreground">
-                Currently building amazing products at{' '}
-                <span className="text-primary font-semibold">TechCorp</span> and always
-                open to new opportunities and collaborations.
-              </p>
-            </div>
+            <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-3">
+             I’m a pre-final year B.Tech student in Data Science & Artificial Intelligence at IIIT Dharwad, passionate about building intelligent systems that merge machine learning, full-stack engineering, and real-time applications. I love working across the stack — from designing scalable backend architectures and ML pipelines to crafting intuitive user-facing interfaces.
+           </p>
+             <p className="text-sm md:text-base text-muted-foreground">
+             My interests span AI systems, LLMs, agentic workflows, real-time inference, and full-stack product development. I’m driven by a desire to ship meaningful projects, solve real problems with AI, and constantly push my technical boundaries.
+            </p>
+           </div>
           </div>
         </div>
 

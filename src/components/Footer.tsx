@@ -7,9 +7,9 @@ const Footer: React.FC<FooterProps> = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/johndoe', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/johndoe', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:john.doe@email.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/nukee7', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/nikhil-kumar-678b59286', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:nikhil14807@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [

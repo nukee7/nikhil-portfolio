@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-muted/20 border-t border-border py-10">
+    <footer className="bg-background/50 border-t border-border py-10">
       <div className="max-w-4xl mx-auto px-4">
 
         {/* Let's Connect Section */}
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 glass-card flex items-center justify-center hover:glow transition-all duration-300 group"
+                  className="w-10 h-10 border border-border rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                 >
                   <IconComponent
                     className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300"

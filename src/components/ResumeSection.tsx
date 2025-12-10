@@ -1,54 +1,43 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
 
-interface ResumeSectionProps {}
-
-const ResumeSection: React.FC<ResumeSectionProps> = () => {
+const ResumeSection: React.FC = () => {
   const handleViewResume = () => {
-    // Open PDF in new tab
-    window.open('/resume.pdf', '_blank');
+    window.open(
+      'https://drive.google.com/file/d/16O3REQlg-lu3H5qX2kbJhVYdVe8G19eh/view?usp=sharing',
+      '_blank'
+    );
   };
 
   return (
-    <section id="resume" className="section-padding bg-muted/30">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Section Header */}
-        <div className="mb-12 fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Resume
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            View my complete professional resume with detailed work experience, 
-            skills, and achievements.
-          </p>
-        </div>
+    <section id="resume" className="py-20 bg-muted/30">
+      <div className="max-w-3xl mx-auto text-center">
 
-        {/* Resume PDF Link */}
-        <div className="glass-card p-12 scale-in" style={{ animationDelay: '0.2s' }}>
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-              <FileText className="w-12 h-12 text-primary" />
-            </div>
-            
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              John Doe - Professional Resume
-            </h3>
-            
-            <p className="text-muted-foreground mb-8 max-w-md">
-              Click below to view my complete resume in PDF format with all professional 
-              details, work history, and technical expertise.
-            </p>
-            
-            <button 
-              onClick={handleViewResume}
-              className="btn-gradient flex items-center justify-center gap-3"
-              aria-label="View complete resume PDF"
-            >
-              <FileText className="w-6 h-6" aria-hidden="true" />
-              View Resume PDF
-            </button>
-          </div>
-        </div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">Resume</h2>
+
+        <p className="text-muted-foreground text-lg mb-10">
+        Click below to open my latest resume for a detailed overview of my experience and skills
+        </p>
+
+        <div className="glass-card p-12 flex flex-col items-center gap-8 mx-auto w-full md:w-2/3 rounded-2xl shadow-lg">
+
+  {/* Icon Circle */}
+  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+    <FileText className="w-10 h-10 text-primary" />
+  </div>
+
+  {/* Button */}
+  <button
+    onClick={handleViewResume}
+    className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary 
+               text-white text-lg font-semibold shadow-md hover:shadow-xl 
+               transition-all flex items-center gap-3"
+  >
+    <FileText className="w-6 h-6" />
+    View Resume
+  </button>
+
+</div>
       </div>
     </section>
   );

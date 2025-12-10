@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Eye, Filter } from 'lucide-react';
+import { ExternalLink, Github, Eye } from 'lucide-react';
 
 interface ProjectsSectionProps {}
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-
   const projects = [
     {
       id: 1,
@@ -23,12 +21,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
         'Axios',
         'YouTube Data API',
       ],
-      category: 'fullstack',
-      githubUrl: 'https://github.com/nukee7', // Replace with actual repo if separate
+      githubUrl: 'https://github.com/nukee7',
       liveUrl: 'https://cre8-hub.vercel.app',
       featured: true,
+      category: 'fullstack',
     },
-  
+
     {
       id: 2,
       title: 'Stocksage – AI-Powered Financial Analytics',
@@ -43,12 +41,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
         'YFinance API',
         'TensorFlow',
       ],
-      category: 'ai-ml',
       githubUrl: 'https://github.com/nukee7/stocksage',
-      liveUrl: 'https://github.com/nukee7/stocksage', // No live link provided
+      liveUrl: 'https://github.com/nukee7/stocksage',
       featured: true,
+      category: 'ai-ml',
     },
-  
+
     {
       id: 3,
       title: 'FitForge – Full-Stack Fitness Tracking App',
@@ -63,60 +61,31 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
         'MongoDB',
         'JWT',
       ],
-      category: 'fullstack',
-      githubUrl: 'https://github.com/nukee7', // Replace with actual repo once available
-      liveUrl: '#', // Add live link when deployed
+      githubUrl: 'https://github.com/nukee7',
+      liveUrl: '#',
       featured: false,
+      category: 'fullstack',
     },
   ];
-
-  const filterOptions = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'fullstack', label: 'Full Stack' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'mobile', label: 'Mobile' },
-  ];
-
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="section-padding bg-section-gradient">
       <div className="max-w-7xl mx-auto">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            A showcase of my recent work and personal projects that demonstrate my skills and passion for development
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A showcase of my recent work and personal projects demonstrating my expertise
+            in full-stack development and machine learning.
           </p>
-
-          {/* Filter buttons */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <Filter className="w-5 h-5 text-muted-foreground mr-2 mt-2" aria-hidden="true" />
-            {filterOptions.map((option) => (
-              <button
-                key={option.id}
-                onClick={() => setActiveFilter(option.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === option.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary'
-                }`}
-                aria-pressed={activeFilter === option.id}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
               className={`glass-card group relative overflow-hidden ${
@@ -137,10 +106,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                   src={project.image}
                   alt={`Screenshot of ${project.title}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
                 />
-                
-                {/* Overlay with action buttons */}
+
+                {/* Overlay actions */}
                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   {project.liveUrl && (
                     <a
@@ -148,9 +116,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="glass-card p-3 hover:glow transition-all duration-300"
-                      aria-label={`View live demo of ${project.title}`}
                     >
-                      <Eye className="w-5 h-5 text-primary" aria-hidden="true" />
+                      <Eye className="w-5 h-5 text-primary" />
                     </a>
                   )}
                   <a
@@ -158,9 +125,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="glass-card p-3 hover:glow transition-all duration-300"
-                    aria-label={`View source code of ${project.title}`}
                   >
-                    <Github className="w-5 h-5 text-primary" aria-hidden="true" />
+                    <Github className="w-5 h-5 text-primary" />
                   </a>
                 </div>
               </div>
@@ -170,16 +136,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-foreground/80 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.technologies.map((tech, idx) => (
                     <span
-                      key={techIndex}
+                      key={idx}
                       className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20"
                     >
                       {tech}
@@ -187,7 +153,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                   ))}
                 </div>
 
-                {/* Action buttons */}
+                {/* Links */}
                 <div className="flex gap-4">
                   {project.liveUrl && (
                     <a
@@ -196,7 +162,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300 font-medium"
                     >
-                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                      <ExternalLink className="w-4 h-4" />
                       Live Demo
                     </a>
                   )}
@@ -206,7 +172,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
                   >
-                    <Github className="w-4 h-4" aria-hidden="true" />
+                    <Github className="w-4 h-4" />
                     Source Code
                   </a>
                 </div>
@@ -215,19 +181,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
-            Want to see more of my work or discuss a potential project?
-          </p>
-          <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-gradient"
-            aria-label="Get in touch to discuss projects"
-          >
-            Let's Work Together
-          </button>
-        </div>
       </div>
     </section>
   );

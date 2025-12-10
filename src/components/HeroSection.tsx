@@ -14,12 +14,11 @@ interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/johndoe', label: 'GitHub Profile' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/johndoe', label: 'LinkedIn Profile' },
-    { icon: Mail, href: 'mailto:john.doe@email.com', label: 'Email Contact' },
+    { icon: Github, href: 'https://github.com/nukee7', label: 'GitHub Profile' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/nikhil-kumar-678b59286', label: 'LinkedIn Profile' },
+    { icon: Mail, href: 'mailto:nikhil14807@gmail.com', label: 'Email Contact' },
   ];
 
-  // 🔹 Typewriter Effect Logic
   const roles = ['Pre Final Year Student', 'ML Engineer', 'Full Stack Developer'];
   const [text, setText] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
@@ -48,7 +47,6 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, roleIndex]);
 
-  // 🔹 Skills data
   const skills = [
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
     { name: 'React', icon: <SiReact className="text-blue-400" /> },
@@ -62,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section
       id="about"
-      className="min-h-[80vh] flex flex-col items-center justify-center py-12 px-6 relative overflow-hidden"
+      className="relative overflow-hidden px-6 pt-32 md:pt-36 pb-8 flex items-center scroll-mt-24"
     >
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -74,63 +72,86 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 w-full">
-        {/* Top Section (Photo + Text) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-          {/* Left Column - Image */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative mb-4 scale-in" style={{ animationDelay: '0.3s' }}>
-              <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden glass-card p-1.5">
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+          
+          {/* Left Column - Image + Social Links */}
+          <div className="flex flex-col items-center space-y-5">
+            <div className="relative scale-in" style={{ animationDelay: '0.3s' }}>
+              <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden glass-card p-1.5">
                 <img
                   src="/image.png"
                   alt="Nikhil Kumar - Professional headshot"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              <div className="absolute inset-0 w-56 h-56 md:w-64 md:h-64 rounded-full border border-primary/20 animate-pulse"></div>
+              <div className="absolute inset-0 w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border border-primary/20 animate-pulse"></div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4 scale-in" style={{ animationDelay: '0.4s' }}>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg glass-card hover:scale-110 transition-transform"
+                  aria-label={link.label}
+                >
+                  <link.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Right Column - Content (closer to image) */}
-          <div className="text-center lg:text-left lg:ml-[-20px]">
-            <h1 className="text-3xl md:text-5xl font-bold mb-3 fade-in">
-              <span className="block text-foreground/90 mb-1">Hello, I'm Nikhil</span>
-            </h1>
+          {/* Right Column - Text Content */}
+          <div className="text-center lg:text-left space-y-5">
+            <div className="fade-in">
+              <h1 className="text-3xl md:text-5xl font-bold mb-2">
+                <span className="block text-foreground/90">Hello, I'm Nikhil</span>
+              </h1>
 
-            {/* Typing animation */}
-            <h2
-              className="text-xl md:text-2xl text-primary font-semibold mb-6 whitespace-nowrap"
-              style={{
-                minHeight: '1.8rem',
-                borderRight: '2px solid rgba(255,255,255,0.8)',
-                display: 'inline-block',
-                animation: 'blink 1s step-end infinite',
-              }}
-            >
-              {text}
-            </h2>
+              {/* Typing animation */}
+              <h2
+                className="text-xl md:text-2xl text-primary font-semibold h-8 flex items-center justify-center lg:justify-start"
+              >
+                <span className="inline-block" style={{ borderRight: '2px solid rgba(255,255,255,0.8)' }}>
+                  {text}
+                </span>
+              </h2>
+            </div>
 
-            <div className="mb-6 scale-in" style={{ animationDelay: '0.3s' }}>
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-3">
-             I’m a pre-final year B.Tech student in Data Science & Artificial Intelligence at IIIT Dharwad, passionate about building intelligent systems that merge machine learning, full-stack engineering, and real-time applications. I love working across the stack — from designing scalable backend architectures and ML pipelines to crafting intuitive user-facing interfaces.
-           </p>
-             <p className="text-sm md:text-base text-muted-foreground">
-             My interests span AI systems, LLMs, agentic workflows, real-time inference, and full-stack product development. I’m driven by a desire to ship meaningful projects, solve real problems with AI, and constantly push my technical boundaries.
-            </p>
-           </div>
+            <div className="space-y-3 scale-in" style={{ animationDelay: '0.3s' }}>
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+                I'm a pre-final year B.Tech student in Data Science & Artificial Intelligence at
+                IIIT Dharwad, passionate about building intelligent systems that merge machine
+                learning, full-stack engineering, and real-time applications. I love working across
+                the stack — from designing scalable backend architectures and ML pipelines to
+                crafting intuitive user-facing interfaces.
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground">
+                My interests span AI systems, LLMs, agentic workflows, real-time inference, and
+                full-stack product development. I'm driven by a desire to ship meaningful projects,
+                solve real problems with AI, and constantly push my technical boundaries.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* 🔹 Skills Row (full-width below both columns) */}
-        <div className="mt-10 flex flex-wrap justify-center gap-6 md:gap-10">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="flex flex-col items-center text-center transition-transform hover:scale-110"
-            >
-              <div className="text-4xl md:text-5xl">{skill.icon}</div>
-              <p className="text-sm md:text-base text-foreground mt-2">{skill.name}</p>
-            </div>
-          ))}
+        {/* Skills - Full Width Below */}
+        <div className="mt-6 pt-5 border-t border-primary/10">
+          <div className="flex flex-wrap justify-center gap-5 md:gap-8">
+            {skills.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex flex-col items-center text-center transition-transform hover:scale-110"
+              >
+                <div className="text-4xl md:text-5xl">{skill.icon}</div>
+                <p className="text-sm md:text-base text-foreground mt-2">{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

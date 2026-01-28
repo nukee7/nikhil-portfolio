@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
               aria-label="Go to home section"
             >
-              JD
+            
             </button>
           </div>
 

@@ -2,215 +2,263 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Professional gradient theme with glass morphism */
-
+/* =========================================================
+   Portfolio Design System – Dark, Animated, Glass UI
+   ========================================================= */
 @layer base {
   :root {
-    /* Core Background & Text Colors */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
-
-    /* Card & Surface Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
-
-    /* Glass Morphism Colors */
-    --glass-bg: 0 0% 95%;
-    --glass-border: 0 0% 85%;
-
-    /* Professional Grey Palette */
-    --primary: 0 0% 25%;
-    --primary-foreground: 0 0% 98%;
-    --primary-dark: 0 0% 15%;
-
-    --secondary: 0 0% 40%;
-    --secondary-foreground: 0 0% 98%;
-
-    /* Accent Colors */
-    --accent: 0 0% 60%;
-    --accent-foreground: 0 0% 98%;
-
-    /* Muted Colors */
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
-
-    /* Interactive Elements */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 25%;
-
-    --radius: 0.75rem;
-
-    /* Custom Portfolio Variables */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 92%) 0%, hsl(0 0% 98%) 50%, hsl(0 0% 95%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --glass-gradient: linear-gradient(135deg, hsla(0 0% 95%, 0.8), hsla(0 0% 98%, 0.4));
-    
-    /* Shadows */
-    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 50px rgba(0, 0, 0, 0.15);
-    
-    /* Animation Variables */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
+    /* Core */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    /* Surfaces */
+    --card: 222.2 84% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Glass */
+    --glass-bg: 222.2 84% 8%;
+    --glass-border: 222.2 20% 25%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Palette */
+    --primary: 210 90% 60%;
+    --primary-foreground: 210 40% 98%;
+    --primary-dark: 222.2 84% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 222.2 20% 30%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 280 80% 60%;
+    --accent-foreground: 0 0% 98%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 222.2 20% 12%;
+    --muted-foreground: 215 20% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 222.2 20% 20%;
+    --input: 222.2 20% 20%;
+    --ring: 210 90% 60%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --hero-gradient: radial-gradient(
+      circle at top left,
+      hsl(210 90% 25%),
+      hsl(222.2 84% 8%),
+      hsl(250 60% 12%)
+    );
+
+    --glass-gradient: linear-gradient(
+      135deg,
+      hsla(222.2 20% 20%, 0.8),
+      hsla(222.2 20% 10%, 0.5)
+    );
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 60px rgba(80, 120, 255, 0.35);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
-  /* Portfolio-specific utility classes */
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased font-sans;
     background: var(--hero-gradient);
+    background-size: 300% 300%;
     background-attachment: fixed;
+    animation: heroGradientShift 22s ease-in-out infinite;
+    min-height: 100vh;
   }
 
-  /* Glass morphism utility classes */
-  .glass {
-    background: var(--glass-gradient);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--glass-border));
-    box-shadow: var(--shadow-glass);
-  }
-
-  .glass-card {
-    @apply glass rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
-  }
-
-  /* Section spacing */
-  .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Glow effects */
-  .glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--secondary)));
+  /* Subtle animated noise overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
-@layer components {
-  /* Navigation styles */
-  .nav-link {
-    @apply relative px-4 py-2 text-foreground/80 transition-all duration-300 hover:text-foreground;
-  }
+/* =========================================================
+   Animated Background Orbs
+   ========================================================= */
 
-  .nav-link.active {
-    @apply text-primary;
-  }
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
 
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
-  }
+.bg-orbs span {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.35;
+  animation: floatOrb linear infinite;
+}
 
-  .nav-link.active::after,
-  .nav-link:hover::after {
-    @apply w-full;
-  }
+.bg-orbs span:nth-child(1) {
+  background: hsl(var(--primary));
+  top: -15%;
+  left: -10%;
+  animation-duration: 34s;
+}
 
-  /* Button variants */
-  .btn-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
-  }
+.bg-orbs span:nth-child(2) {
+  background: hsl(var(--accent));
+  bottom: -15%;
+  right: -10%;
+  animation-duration: 40s;
+}
 
-  .btn-outline {
-    @apply border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold bg-transparent transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105;
-  }
+.bg-orbs span:nth-child(3) {
+  background: hsl(250 80% 60%);
+  top: 40%;
+  left: 45%;
+  animation-duration: 46s;
+}
 
-  /* Animation classes */
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-
-  .slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+  50% {
+    transform: translate(140px, -180px) scale(1.25);
   }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
 
-  .scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+/* =========================================================
+   Glass Morphism Utilities
+   ========================================================= */
+
+.glass {
+  background: var(--glass-gradient);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card {
+  @apply glass rounded-2xl p-6 transition-all duration-300;
+}
+
+.glass-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-glass), var(--shadow-glow);
+}
+
+/* =========================================================
+   Layout & Sections
+   ========================================================= */
+
+.section-padding {
+  @apply py-24 px-4 sm:px-6 lg:px-8;
+}
+
+/* =========================================================
+   Navigation
+   ========================================================= */
+
+.nav-link {
+  @apply relative px-4 py-2 text-foreground/80 transition-all duration-300;
+}
+
+.nav-link:hover {
+  @apply text-foreground;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: hsl(var(--primary));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: hsl(var(--primary));
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+.btn-gradient {
+  @apply px-8 py-3 rounded-full font-semibold text-primary-foreground;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-outline {
+  @apply px-8 py-3 rounded-full font-semibold;
+  border: 2px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   Animations
+   ========================================================= */
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@keyframes heroGradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
 
@@ -239,10 +287,43 @@
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.92);
   }
   to {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* =========================================================
+   Scrollbar
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary-dark)),
+    hsl(var(--accent))
+  );
+}
+html,
+body {
+  background-color: hsl(var(--background)) !important;
 }

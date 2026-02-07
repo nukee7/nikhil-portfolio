@@ -70,24 +70,22 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary transform md:-translate-x-0.5"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
 
           {/* Experience items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className={`relative flex flex-col md:flex-row items-start ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className="relative flex items-start"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-br from-primary to-secondary rounded-full transform md:-translate-x-2 z-10">
+                <div className="absolute left-6 w-4 h-4 bg-gradient-to-br from-primary to-secondary rounded-full z-10">
                   <div className="w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full animate-pulse"></div>
                 </div>
 
                 {/* Content card */}
-                <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                <div className="ml-16 w-full pr-4">
                   <div className="glass-card">
                     {/* Header */}
                     <div className="mb-4">

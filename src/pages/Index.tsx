@@ -6,6 +6,7 @@ import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import VantaBackground from '../components/vantabackground';
 
 /**
  * Main portfolio page component
@@ -18,6 +19,7 @@ import Footer from '../components/Footer';
  */
 const Index = () => {
   return (
+    <VantaBackground>
     <main className="min-h-screen">
       {/* Fixed navigation bar with scrollspy functionality */}
       <Navbar />
@@ -37,6 +39,7 @@ const Index = () => {
       {/* Footer with additional links and information */}
       <Footer />
     </main>
+    </VantaBackground>
   );
 };
 

@@ -15,7 +15,7 @@ const App = () => (
       <Sonner />
 
       {/* 🔥 THIS IS THE FIX */}
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-transparent text-foreground">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

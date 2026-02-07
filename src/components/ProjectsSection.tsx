@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 
-interface ProjectsSectionProps {}
+interface ProjectsSectionProps { }
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   const projects = [
@@ -69,7 +69,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding bg-section-gradient">
+    <section id="projects" className="section-padding bg-transparent">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
@@ -88,9 +88,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`glass-card group relative overflow-hidden ${
-                project.featured ? 'md:col-span-2 xl:col-span-2' : ''
-              }`}
+              className={`glass-card group relative overflow-hidden ${project.featured ? 'md:col-span-2 xl:col-span-2' : ''
+                }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Featured badge */}

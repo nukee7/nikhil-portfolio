@@ -69,9 +69,9 @@ const HeroSection: React.FC = () => {
     >
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-primary/15 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-primary/5 rounded-full blur-3xl animate-float" />
         <div
-          className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/15 rounded-full blur-3xl animate-float"
+          className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl animate-float"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -82,7 +82,7 @@ const HeroSection: React.FC = () => {
           {/* Profile */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition" />
+              <div className="absolute -inset-1 bg-primary/20 rounded-full blur opacity-50 group-hover:opacity-75 transition" />
               <img
                 src="/profile.png"
                 alt="Nikhil Kumar"
@@ -107,11 +107,11 @@ const HeroSection: React.FC = () => {
               ))}
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-semibold">
               Hello, I&apos;m Nikhil
             </h1>
 
-            <h2 className="text-xl md:text-2xl text-primary font-semibold h-8">
+            <h2 className="text-xl md:text-2xl text-muted-foreground font-medium h-8">
               <span
                 className="inline-block pr-1"
                 style={{ borderRight: "2px solid rgba(255,255,255,0.8)" }}

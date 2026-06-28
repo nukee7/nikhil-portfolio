@@ -72,10 +72,10 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
             Get In Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Ready to start your next project? I'd love to hear from you. Send me a message and I'll respond as soon as possible.
           </p>
         </div>
@@ -84,7 +84,7 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
                 Let's Connect
               </h3>
               <p className="text-foreground/80 mb-8 leading-relaxed">
@@ -101,8 +101,8 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
                 const IconComponent = info.icon;
                 const content = (
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                      <IconComponent className="w-6 h-6 text-white" aria-hidden="true" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                      <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-muted-foreground">{info.label}</p>
@@ -133,7 +133,7 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
                 <div>
-                  <p className="text-lg font-semibold text-foreground">Available for new projects</p>
+                  <p className="text-base font-medium text-foreground">Available for new projects</p>
                   <p className="text-muted-foreground">Usually responds within 24 hours</p>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent!</h3>
                 <p className="text-muted-foreground">
                   Thank you for reaching out. I'll get back to you soon.
                 </p>
@@ -153,7 +153,7 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-6">Send a Message</h3>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">

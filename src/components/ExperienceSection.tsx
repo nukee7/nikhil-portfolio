@@ -59,38 +59,22 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
             Experience
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             My professional journey and the impact I've made at each step
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
-
-          {/* Experience items */}
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                className="relative flex items-start"
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-br from-primary to-secondary rounded-full z-10">
-                  <div className="w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full animate-pulse"></div>
-                </div>
-
-                {/* Content card */}
-                <div className="ml-16 w-full pr-4">
-                  <div className="glass-card">
+        {/* Experience items */}
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div key={index} className="glass-card">
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <h3 className="text-xl md:text-2xl font-bold text-foreground">{exp.title}</h3>
+                        <h3 className="text-xl md:text-2xl font-semibold text-foreground">{exp.title}</h3>
                         <span className="text-primary font-medium text-sm px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mt-2 sm:mt-0 self-start">
                           {exp.type}
                         </span>
@@ -129,7 +113,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Achievements:</h4>
+                      <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">Key Achievements</h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, achIndex) => (
                           <li key={achIndex} className="flex items-start">
@@ -154,11 +138,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
                         ))}
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+              className="text-2xl font-semibold text-foreground hover:text-primary transition-colors duration-300"
               aria-label="Go to home section"
             >
             

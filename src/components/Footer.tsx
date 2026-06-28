@@ -17,11 +17,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-background/50 border-t border-border py-10">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Let's Connect Section */}
         <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-foreground mb-4">Let's Connect</h3>
+          <h3 className="text-lg font-medium text-foreground mb-4">Let's Connect</h3>
           <a
             href="mailto:nikhil14807@gmail.com"
             className="block text-muted-foreground hover:text-primary transition-colors duration-300 mb-4"

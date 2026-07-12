@@ -10,12 +10,12 @@ const ResumeSection: React.FC = () => {
   };
 
   return (
-    <section id="resume" className="py-20 bg-muted/30">
+    <section id="resume" className="bg-muted/30 px-4 py-14 sm:px-6 md:py-16 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
 
-        <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">Resume</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-foreground">Resume</h2>
 
-        <p className="text-muted-foreground text-lg mb-10">
+        <p className="text-muted-foreground text-base md:text-lg mb-6">
           Click below to open my latest resume for a detailed overview of my experience and skills
         </p>
 

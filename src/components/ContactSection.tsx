@@ -71,23 +71,23 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-foreground">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             Ready to start your next project? I'd love to hear from you. Send me a message and I'll respond as soon as possible.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-5">
             <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
                 Let's Connect
               </h3>
-              <p className="text-foreground/80 mb-8 leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a chat about technology and development. Whether you're 
                 looking for a developer for your team or need help with a project, 
@@ -96,7 +96,7 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
             </div>
 
             {/* Contact details */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 const content = (
@@ -151,12 +151,12 @@ const ContactSection: React.FC<ContactSectionProps> = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-6">Send a Message</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message</h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Name *

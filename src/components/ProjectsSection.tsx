@@ -73,18 +73,14 @@ const ProjectsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
             Projects
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work and personal projects demonstrating my expertise
-            in full-stack development and machine learning.
-          </p>
         </div>
 
         {/* Projects — vertical stack */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6">
           {projects.map((project, index) => {
             const CategoryIcon = project.categoryIcon;
             return (

@@ -11,13 +11,11 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
       "location": "Bangalore, India",
       "period": "Jun 2025 – Aug 2025",
       "type": "Internship",
-      "description": "Developed a real-time cockpit voice detection and command recognition system for aircraft environments, integrating ASR, VAD, TTS, and low-latency streaming pipelines.",
-      "achievements": [
-        "Built a real-time voice-controlled assistant using Whisper ASR, VAD, and PyAudio for robust trigger-word detection and command recognition in noisy cockpit-like conditions.",
-        "Engineered FastAPI and WebSocket-based backend services enabling low-latency bi-directional audio streaming between the ASR model and the Streamlit dashboard.",
-        "Integrated backend and frontend Text-to-Speech pipelines (pyttsx3 & browser SpeechSynthesis API) to enable instant audio feedback and command confirmation.",
-        "Implemented fuzzy command matching using NLP techniques (difflib & Whisper embeddings), improving natural-language command accuracy and tolerance to pilot speech variations.",
-        "Collaborated with engineers to test, benchmark, and optimize ASR inference speed, reducing response latency across the system."
+      "description": [
+        "Developed a real-time cockpit voice detection and command recognition system for aircraft environments, focused on reliable voice-driven interaction.",
+        "Integrated ASR, VAD, TTS, and low-latency streaming pipelines to handle continuous cockpit audio input and responsive command feedback.",
+        "Engineered FastAPI and WebSocket backend services for bi-directional audio streaming between the ASR model and the user-facing interface.",
+        "Implemented fuzzy NLP command matching with difflib and Whisper embeddings, then optimized ASR inference to reduce overall response latency."
       ],
       "technologies": [
         "Python",
@@ -34,17 +32,16 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
       ]
     },
     {
-      "title": "AI/ML Intern",
+      "title": "Machine Learning Intern",
       "company": "Indian Institute of Technology, Dharwad",
       "location": "Dharwad, India",
       "period": "Nov 2024 - Dec 2024",
       "type": "Internship",
-      "description": "Worked on implementing and evaluating classical machine learning classification algorithms for research under the guidance of IIT Dharwad faculty.",
-      "achievements": [
-        "Implemented ML classification models including k-NN, Reference Template methods, Bayes Classifier with Gaussian density, and Gaussian Mixture Models (GMM).",
-        "Conducted experiments comparing distance metrics (Euclidean, Mahalanobis) to analyze class separability and decision boundaries.",
-        "Evaluated models on artificial and real-world datasets using Python-based ML pipelines, improving understanding of supervised learning fundamentals.",
-        "Developed reproducible, well-documented implementations in a public GitHub repository demonstrating strong ML engineering practices."
+      "description": [
+        "Implemented classical machine learning classifiers including k-NN, Reference Template methods, Bayes classifiers, and Gaussian Mixture Models.",
+        "Compared Euclidean and Mahalanobis distance metrics to study class separability, model behavior, and resulting decision boundaries.",
+        "Evaluated classification models on artificial and real-world datasets using structured Python-based machine learning pipelines.",
+        "Built reproducible, well-documented implementations that supported clear research validation and easier review of experimental results."
       ],
       "technologies": [
         "Python", "NumPy", "Pandas", "Scikit-Learn", 
@@ -58,17 +55,14 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
     <section id="experience" className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
             Experience
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            My professional journey and the impact I've made at each step
-          </p>
         </div>
 
         {/* Experience items */}
-        <div className="space-y-8">
+        <div className="space-y-5">
           {experiences.map((exp, index) => (
             <div key={index} className="glass-card">
                     {/* Header */}
@@ -109,19 +103,13 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-foreground/80 mb-4">{exp.description}</p>
-
-                    {/* Achievements */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">Key Achievements</h4>
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="flex items-start">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-foreground/80">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="mb-4 space-y-2">
+                      {exp.description.map((line, lineIndex) => (
+                        <div key={lineIndex} className="flex items-start gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <p className="text-foreground/80">{line}</p>
+                        </div>
+                      ))}
                     </div>
 
                     {/* Technologies */}

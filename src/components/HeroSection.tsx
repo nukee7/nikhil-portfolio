@@ -5,11 +5,17 @@ import {
   SiReact,
   SiNodedotjs,
   SiMongodb,
+  SiPostgresql,
   SiPython,
   SiFastapi,
   SiLangchain,
   SiPrisma,
+  SiDocker,
+  SiKubernetes,
+  SiCplusplus,
 } from "react-icons/si";
+
+const roles = ["Pre Final Year Student", "ML Engineer", "Full Stack Developer"];
 
 const HeroSection: React.FC = () => {
   const socialLinks = [
@@ -22,7 +28,6 @@ const HeroSection: React.FC = () => {
     { icon: Mail, href: "mailto:nikhil14807@gmail.com", label: "Email Contact" },
   ];
 
-  const roles = ["Pre Final Year Student", "ML Engineer", "Full Stack Developer"];
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -55,17 +60,20 @@ const HeroSection: React.FC = () => {
     { name: "React", icon: <SiReact className="text-blue-400" /> },
     { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-    { name: "PostgreSQL", icon: <SiMongodb className="text-green-600" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-400" /> },
     { name: "Python", icon: <SiPython className="text-blue-500" /> },
     { name: "FastAPI", icon: <SiFastapi className="text-teal-400" /> },
     { name: "LangChain", icon: <SiLangchain className="text-purple-500" /> },
     { name: "Prisma", icon: <SiPrisma className="text-purple-500" /> },
+    { name: "Docker", icon: <SiDocker className="text-sky-400" /> },
+    { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+    { name: "C++", icon: <SiCplusplus className="text-blue-400" /> },
   ];
 
   return (
     <section
       id="about"
-      className="relative min-h-screen bg-transparent text-foreground overflow-hidden px-6 pt-32 md:pt-36 pb-12 scroll-mt-24"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-transparent px-4 pb-6 pt-20 text-foreground scroll-mt-24 sm:px-6 md:pt-24"
     >
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -76,9 +84,9 @@ const HeroSection: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 md:pt-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* INTRO GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-center">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[auto_1fr] lg:gap-10">
           {/* Profile */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative group">
@@ -86,28 +94,28 @@ const HeroSection: React.FC = () => {
               <img
                 src="/profile.png"
                 alt="Nikhil Kumar"
-                className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-background shadow-xl"
+                className="relative h-32 w-32 rounded-full border-4 border-background object-cover shadow-xl sm:h-40 sm:w-40 md:h-52 md:w-52"
               />
             </div>
           </div>
 
           {/* Intro Content */}
-          <div className="space-y-6">
-            <div className="flex gap-4 justify-center lg:justify-start">
+          <div className="space-y-4 text-center lg:text-left">
+            <div className="flex justify-center gap-3 lg:justify-start">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg glass-card hover:scale-110 transition-transform"
+                  className="glass rounded-lg p-3 transition-transform hover:scale-105"
                 >
                   <link.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-semibold">
+            <h1 className="text-3xl font-semibold md:text-5xl">
               Hello, I&apos;m Nikhil
             </h1>
 
@@ -120,7 +128,7 @@ const HeroSection: React.FC = () => {
               </span>
             </h2>
 
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+            <p className="mx-auto max-w-3xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg lg:mx-0">
               I&apos;m a CS undergrad passionate about building intelligent
               systems that merge machine learning, full-stack engineering, and
               real-time applications.
@@ -128,22 +136,30 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 🔥 CONTINUOUS SKILLS MARQUEE */}
-        <div className="mt-24 md:mt-32 relative overflow-hidden">
-          {/* Fade edges */}
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-10" />
+        {/* Skills */}
+        <div className="mt-8 md:mt-10">
+          <div className="w-full">
+            <div className="mb-3 text-center md:text-left">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                Core Skills
+              </p>
+            </div>
 
-          <div className="flex gap-6 animate-marquee hover:[animation-play-state:paused]">
-            {[...skills, ...skills].map((skill, index) => (
-              <div
-                key={`${skill.name}-${index}`}
-                className="flex items-center gap-2 min-w-max px-5 py-2 rounded-xl glass-card"
-              >
-                <span className="text-2xl">{skill.icon}</span>
-                <span className="text-sm font-medium">{skill.name}</span>
-              </div>
-            ))}
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex min-h-14 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 backdrop-blur-sm transition-colors hover:border-primary/35 hover:bg-white/[0.08]"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] text-xl">
+                    {skill.icon}
+                  </span>
+                  <span className="text-sm font-medium leading-tight text-foreground/90">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
